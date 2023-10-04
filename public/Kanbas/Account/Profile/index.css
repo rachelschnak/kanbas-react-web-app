@@ -1,0 +1,72 @@
+.wd-account-profile {
+    color: gray;
+    padding: 50px;
+    margin-top:50px;
+}
+.wd-account-profile i {
+    font-size: 10em;
+    color: gray;
+    margin: 10px;
+}
+
+.wd-account-profile i.wd-profile-small-icon {
+    font-size: 1em;
+
+}
+
+.wd-account-profile a.btn-primary {
+    font-size: 1em;
+    color: gray;
+    background-color: rgba(203,200,200,0.50);
+    border-color: gray;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.wd-account-profile a.btn-secondary {
+    font-size: 1em;
+    color: white;
+    background-color: red;
+    border-color: darkred;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.wd-account-profile i.wd-profile-small-icon-red {
+    font-size: 1em;
+    color: red;
+}
+
+.wd-account-profile button.edit-profile {
+    border-width: 2px;
+    border-color: lightgray;
+    color: gray;
+}
+
+.wd-account-profile i {
+    font-size: 10em;
+    color: gray;
+    margin: 10px;
+}
+
+.wd-account-profile a {
+    color: red;
+    text-decoration: none;
+}
+
+.wd-account-profile textarea{
+    color: gray;
+}
+
+.wd-account-profile label {
+    font-size: 1.1em;
+}
+
+.wd-account-profile label.wd-xl-label {
+    font-size: 1.5em;
+}
+
+.wd-account-profile a.wd-btn-left {
+
+
+}

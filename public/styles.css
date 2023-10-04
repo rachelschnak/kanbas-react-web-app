@@ -1,0 +1,508 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    font-family: Arial
+}
+
+.wd-fg-color-black { color: black; }
+.wd-fg-color-white { color: white; }
+.wd-fg-color-blue { color: #7070ff; }
+.wd-fg-color-red { color: #ff7070; }
+.wd-fg-color-green { color: green; }
+
+.wd-bg-color-yellow { background-color: #ffff07; }
+.wd-bg-color-blue { background-color: #7070ff; }
+.wd-bg-color-red { background-color: #ff7070;}
+.wd-bg-color-green { background-color: green; }
+.wd-bg-color-black {background-color: black;}
+.wd-bg-color-white {background-color: white;}
+
+.wd-border-fat {
+    border-width: 20px 30px 20px 30px; }
+.wd-border-thin { border-width: 4px; }
+.wd-border-solid { border-style: solid; }
+.wd-border-dashed { border-style: dashed; }
+.wd-border-yellow { border-color: #ffff07; }
+.wd-border-red { border-color: #ff7070; }
+.wd-border-blue { border-color: #7070ff; }
+
+
+.wd-flex-row-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.wd-flex-row-4 {
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-basis: max-content;
+}
+
+.wd-flex-col-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.wd-flex-grow-1 {
+    flex-grow: 1;
+}
+.wd-width-75px {
+    width: 75px;
+}
+
+.btn-primary.override-bs {
+    background-color: #a90dfd;
+    border-color: #fd0d51;
+    border-width: 10px;
+    border-radius: 20px;
+    border-style: dashed;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.wd-account-navigation.list-group{
+    border-radius: 0px;
+}
+.wd-account-navigation .list-group-item{
+    color: red;
+    background-color: white;
+    border: none;
+}
+
+.wd-account-navigation .list-group-item-active{
+    color: black;
+    background-color: white;
+    border-color: white;
+    border-left: black
+}
+
+.wd-kanbas-navigation.list-group{
+    border-radius: 0px;
+}
+.wd-kanbas-navigation .list-group-item{
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.wd-kanbas-navigation .list-group-item-active{
+    color: black;
+    background-color: white;
+    border-color: white;
+    border-left: black
+}
+
+.wd-kanbas-home nav {
+    left: 80px;
+    background-color: white;
+}
+
+.wd-kanbas-home-content {
+    padding-left: 20px;
+    padding-right: 20px;
+
+
+}
+
+.wd-kanbas-home .wd-kanbas-home-content{
+    top: 56px;
+    position: relative;
+}
+
+.wd-kanbas-home a{
+    color: red;
+    text-decoration: none;
+}
+
+a.wd-kanbas-home-button {
+    color: #2b2f32;
+    background-color: #f0eded;
+    border-color: lightgray;
+    border-radius: 3px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    max-height: 38px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wd-kanbas-home-buttons-status a {
+    color: #2b2f32;
+    background-color: #f0eded;
+    border-color: lightgray;
+    border-radius: 3px;
+    margin-outside: 20px;
+    margin-bottom: 10px;
+}
+
+.wd-kanbas-home button {
+    color: #2b2f32;
+    background-color: #f0eded;
+    border-color: lightgray;
+    border-radius: 3px;
+    margin-right: 3px;
+    margin-bottom: 20px;
+}
+
+.wd-kanbas-home i.fa-circle-check {
+    color: forestgreen;
+    padding-right: 3px;
+}
+
+.wd-kanbas-home .wd-home-module {
+    color: gray;
+    float: end;
+}
+
+.wd-padding-top {
+    padding: 10px;
+}
+
+a.wd-red-button {
+    color: white;
+    background-color: red;
+
+}
+
+a.wd-not-red-links {
+    color: gray;
+}
+
+a.wd-white-links {
+    color: white;
+    text-decoration: none;
+}
+
+.wd-kanbas-home li.list-group-item-secondary {
+    background-color: #f0eded;
+}
+
+.wd-kanbas-home li.wd-lg-child {
+    border-left-color: forestgreen;
+    border-left-width: 5px;
+}
+
+.wd-kanbas-home li.wd-lg-grandchild {
+    padding-left: 50px;
+    border-left-color: forestgreen;
+    border-left-width: 5px;
+}
+
+.wd-kanbas-home .wd-course-status {
+    max-width: 350px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.wd-kanbas-home li.wd-course-status-link-list a {
+    color: #2b2f32;
+    margin-bottom: 10px;
+}
+
+.wd-kanbas-home .wd-kanbas-home-buttons-status{
+    margin-bottom: 20px;
+}
+
+.wd-kanbas-home li.wd-course-status-link-list {
+    margin-bottom: 10px;
+    border-color: lightgray;
+    border-top-width: 1px;
+    border-radius: 3px;
+}
+
+.wd-kanbas-home ul.wd-course-status-list {
+    padding-bottom: 20px;
+}
+
+.wd-kanbas-home ul.wd-to-do-list {
+    padding-bottom: 20px;
+}
+
+.wd-kanbas-home li.wd-to-do-list-item {
+    border-width: 0px;
+}
+
+.wd-subtext {
+    color: darkgray;
+
+}
+
+.wd-kanbas-home li.wd-to-do-list-title {
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    font-size: 1.3em;
+}
+
+.wd-kanbas-home i.wd-pub-bttn {
+    color: white;
+}
+
+.wd-kanbas-home a.wd-published-button {
+    color: white;
+    background-color: forestgreen;
+}
+
+.wd-nav-only {
+    min-width: 200px;
+    max-width: 900px;
+}
+
+.wd-nav-only i{
+    padding-right: 20px;
+}
+
+.wd-nav-only a{
+    color: red;
+    text-decoration: none;
+}
+
+ul.wd-nav-only-list{
+    margin-top: 5px;
+    font-size: 1.1em;
+    border-width: 0px;
+}
+
+.wd-nav-only-list-item{
+    border-width: 0px;
+    padding: 10px;
+}
+
+.wd-gray {
+    color: gray;
+}
+
+i.wd-green {
+    color: forestgreen;
+}
+
+i.wd-sm-nav-bar {
+    padding-right: 15px;
+}
+
+a.wd-big-nav-icon {
+    font-size: 1.7em;
+}
+
+a.wd-padding-right {
+    padding-right: 20px;
+}
+
+a.wd-float-end {
+    float: end;
+}
+
+li.wd-kanbas-home-main-nav {
+    font-size: 1.25em;
+    padding-right: 5px;
+}
+
+.wd-force-float-end {
+    float:end;
+    position: absolute;
+    right: 0px;
+}
+
+.wd-assignment-search {
+    float: start;
+    max-width: 200px;
+}
+
+.wd-main-nav-bar {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    max-height: 31px;
+}
+
+.wd-assignment-l-icons {
+    float: start;
+    font-size: 1.2em;
+    padding-right: 10px;
+    max-width: 70px;
+    margin-top: 15px;
+}
+
+.wd-assignment-l-icons i.wd-edit-icon{
+    margin-left: 15px;
+}
+
+.wd-assignment-title {
+    font-size: 1.15em;
+    color: black;
+}
+
+.wd-assignment-r-icons {
+    margin-top: 15px;
+}
+
+.wd-assignment-r-icons i {
+    margin-left: 20px;
+}
+
+.wd-subsubtext{
+    color: lightgray;
+    font-size: 0.75em;
+}
+
+.list-group {
+    border-radius: 0px;
+}
+
+.wd-title {
+    margin-top: 0px;
+}
+
+.wd-heading-row {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+button.wd-assignment-percnt-btn {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    border-radius: 40px;
+}
+
+i.wd-title-end {
+    padding-top:10px;
+}
+
+button.wd-asn-edit-btn{
+color: gray;
+    background-color: #f0eded;
+    border-radius: 3px;
+    border-color: grey;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+.wd-assignment-edit {
+    padding-left: 30px;
+
+}
+
+.wd-edit-offset {
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+.wd-right-align {
+    text-align: end;
+}
+
+
+.wd-submission-box {
+    border-width: 2px;
+    border-color: lightgray;
+    border-style: solid;
+    padding: 7px;
+    border-radius: 3px;
+}
+
+a.wd-grey-btn {
+    background-color: lightgray;
+    color:gray;
+    border-color: lightgray;
+}
+
+a.wd-special-save-button {
+    width: 100%;
+    padding: 0px;
+}
+
+div.col-auto.btn-group.wd-special-save-button.form-control{
+    padding: 0px;
+    border-radius: 0px;
+    background-color: lightgray;
+}
+
+.wd-grade-buttons{
+    padding-bottom:30px;
+}
+
+.wd-kanbas-table{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+td.wd-table-left{
+    text-align: left;
+}
+
+.wd-margin-bottom {
+    margin-bottom: 30px;
+}
+
+.wd-bold {
+    font-weight: bold;
+}
+
+button.wd-large-margin {
+    margin-left: 85px;
+    margin-right: 85px;
+    margin-top: 65px;
+    margin-bottom: 65px;
+}
+
+.wd-course-detail-names{
+    min-width: 200px;
+    padding-right: 10px;
+}
+
+.wd-courseNav-tables {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    font-size: 1.2em;
+
+}
+
+.wd-courseNav-tables td {
+    color: gray;
+}
+
+.wd-CourseNav-smtxt {
+    font-size: 0.8em;
+    font-style: italic;
+    max-width: 300px;
+}
+
+.wd-btn-bottom {
+  margin-bottom: 20px;
+}
+
+.offcanvas-header.btn-close {
+    filter: none;
+}
+
+.navbar.bg-dark {
+    background-color: black;
+}
+
+.wd-sm-nav-menu span.navbar-toggler-icon {
+    color: white;
+    font-size: 1.3em;
+}
+
+ul.wd-no-borders li{
+    border-width: 0px;
+}
+
+.wd-account-navigation nav {
+    position: fixed;
+    left: 90px;
+    text-align: start;
+}
+
+
+
+.wd-account-navigation ul.wd-account-navigation {
+    position: absolute;
+    top: 70px;
+}
+
