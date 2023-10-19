@@ -3,10 +3,11 @@ import db from "../Database";
 import {FaBars} from "react-icons/fa";
 import {LuGlasses} from "react-icons/lu";
 import "./index.css"
+import courses from "./index";
 
-function CourseTopNavBar(){
+function CourseTopNavBar({ courses }){
     const { courseId } = useParams();
-    const course = db.courses.find((course) => course._id === courseId);
+    const course = courses.find((course) => course._id === courseId);
     const pathname = useLocation();
     const pageName = pathname.pathname.split('/').pop();
     return(

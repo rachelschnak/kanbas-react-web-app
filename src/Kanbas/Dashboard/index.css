@@ -78,9 +78,9 @@
     min-width: 3000px;
 }
 
-.card-deck .card {
-    display: grid;
+.wd-dashboard-button {
+    margin: 10px;
 }
-.wd-kanbas-dashboard-grid  {
-    display: grid;
-}
+
+
+

@@ -9,12 +9,12 @@ import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Modules from "./Modules";
 import CourseTopNavBar from "./CourseTopNavBar";
 
-function Courses() {
+function Courses({courses}) {
     const { courseId } = useParams();
-    const course = db.courses.find((course) => course._id === courseId);
+    const course = courses.find((course) => course._id === courseId);
     return (
         <div className={"wd-course-nav-bar"}>
-            <CourseTopNavBar />
+            <CourseTopNavBar courses={courses} />
             <CourseNavigation />
             <div>
                 <div className="overflow-y-scroll position-fixed bottom-0 end-0" style={{  left: "320px", top: "50px"}} >
