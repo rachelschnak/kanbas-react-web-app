@@ -82,5 +82,13 @@
     margin: 10px;
 }
 
+.wd-module-list {
+    max-width: 1500px;
+}
+
+.row .wd-module-edit-buttons{
+    margin: 15px;
+    margin-top: 5px;
+}
 
 

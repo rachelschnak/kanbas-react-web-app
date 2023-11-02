@@ -64,6 +64,7 @@ a.wd-red-button {
 .wd-module-content {
     margin-right: 30px;
 }
+
 .list-group-item:first-child.wd-kanbas-home-button-main {border-radius: 5px;}
 .list-group-item:last-child.wd-kanbas-home-button-main {border-radius: 5px;}
 
@@ -74,4 +75,17 @@ a.wd-red-button {
 }
 .wd-module-titles {
     font-size: 1.5em;
+}
+
+.wd-dashboard-buttons {
+    float: right;
+    margin-top: 10px;
+}
+
+.wd-dashboard-button {
+    margin: 1px;
+}
+
+.wd-mod-list{
+    max-width: 1500px;
 }
