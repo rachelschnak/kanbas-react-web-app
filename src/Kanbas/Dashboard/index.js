@@ -30,13 +30,21 @@ function Dashboard({courses, course, setCourse, addNewCourse,
                         <button className="btn btn-success float-end" onClick={addNewCourse} >Add</button>
             </div>
                 </div>
-            <div className="list-group row">
-
+            <div className="card-deck wd-kanbas-dashboard-grid">
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4" >
                     {courses.map((course) => (
                     <Link key={course._id}
                           to={`/Kanbas/Courses/${course._id}`}
-                          className="list-group-item">
+                          className="list-group-item" className="card">
+                        {<img src="https://informationage-production.s3.amazonaws.com/uploads/2022/10/forget-digital-transformation-data-transformation-is-what-you-need.jpg" className="card-img-top" />}
                         {course.name}
+
+                    <p className="card-title">{course.number} {course.name} </p>
+                        <p className="card-text">{course.number}.{course._id}.{course.startDate}</p>
+                        <p className="card-text wd-kanbas-dashboard-card-subtext">{course.startDate} Fall 2023 Semester Full Term</p>
+
+
+
                         <div className="wd-dashboard-button d-inline-block float-end">
                         <button className="btn btn-warning"
                                 onClick={(event) => {
@@ -58,6 +66,7 @@ function Dashboard({courses, course, setCourse, addNewCourse,
 
 
                     </Link> ))}
+                </div>
             </div>
             </div>
         </div>

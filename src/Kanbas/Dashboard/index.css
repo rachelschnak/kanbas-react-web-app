@@ -32,17 +32,23 @@
     width: 250px;
     margin-bottom: 20px;
     margin-left: 20px;
-    flex-wrap: wrap;
 }
 
 .wd-kanbas-dashboard .col {
     paddding: 0px;
 }
 
+.row .card {
+    padding: 0px;
+}
+
 .wd-kanbas-dashboard-grid .col {
     margin-top: 30px;
 }
 
+.wd-kanbas-dashboard-grid {
+    max-width: 1300px;
+}
 
 .wd-kanbas-dashboard a {
     text-decoration: none;
