@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kanbas Account</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="/vendors/fontawesome-free-6.4.2-web/css/all.css" rel="stylesheet"/>
+    <link href="/vendors/fontawesome-free-6.4.2-web/css/all.css" rel="stylesheet"/>
+    <link href="/Kanbas-old/Account/AccountNavigator/index.css" rel="stylesheet"/>
+    <link href="/styles.css" rel="stylesheet"/>
+    <link href="/Kanbas-old/Account/Profile/index.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+
+<div class="d-block d-md-none">
+    <nav class="navbar bg-dark fixed-top wd-sm-nav-menu" >
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+            </button>
+            <div class="offcanvas offcanvas-start wd-bg-color-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                    <button type="button" class="btn-close wd-fg-color-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body wd-bg-color-white">
+                    <div class="wd-flex wd-nav-only">
+                        <ul class="list-group wd-nav-only-list">
+                            <li class="list-group-item wd-nav-only-list-item wd-bg-color-white"><a href="/Kanbas-old/Dashboard/screen.html">
+                                <i class="fa-solid fa-gauge-high"></i>
+                                Dashboard</a></li>
+                            <li class="list-group-item wd-nav-only-list-item wd-bg-color-white"><a href="/Kanbas-old/Account/Profile/screen.html">
+                                <i class="fa-solid fa-circle-user" style="color: gray"></i>
+                                Account <i class="fa-solid fa-chevron-right float-end wd-gray"></i></a> </li>
+
+                            <li class="list-group-item wd-nav-only-list-item wd-bg-color-white"><a href="/Kanbas-old/Courses/Home/screen.html">
+                                <i class="fa-solid fa-book"></i>
+                                Courses <i class="fa-solid fa-chevron-right float-end wd-gray"></i></a></li>
+                            <li class="list-group-item wd-nav-only-list-item wd-bg-color-white"><a href="#">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                Calendar</a></li>
+                            <li class="list-group-item wd-nav-only-list-item wd-bg-color-white"><a href="#">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                                Inbox</a></li>
+
+                            <li class="list-group-item wd-nav-only-list-item wd-bg-color-white"><a href="#">
+                                <i class="fa-solid fa-network-wired"></i>
+                                Studio</a></li>
+                            <li class="list-group-item wd-nav-only-list-item wd-bg-color-white"><a href="#">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                Commons</a></li>
+                            <li class="list-group-item wd-nav-only-list-item wd-bg-color-white"><a href="#">
+                                <i class="fa-regular fa-clock"></i>
+                                History <i class="fa-solid fa-chevron-right float-end wd-gray"></i></a></li>
+                            <li class="list-group-item wd-nav-only-list-item wd-bg-color-white"><a href="#">
+                                <i class="fa-regular fa-circle-question"></i>
+                                Help <i class="fa-solid fa-chevron-right float-end wd-gray"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <a class="wd-white-links" href="#"> Profile </a>
+
+
+            <div col="auto">
+                <a class=" wd-white-links" href="#"> <i class="fa-solid fa-glasses wd-sm-nav-bar"></i>  </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fa-solid fa-angle-down"></i></span>
+                </button>
+                <div class="offcanvas offcanvas-end wd-bg-color-white" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbarLabel2">
+                    <div class="offcanvas-header wd-bg-color-black">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel2"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-x wd-fg-color-white"></i></button>
+                    </div>
+                    <div class="offcanvas-body wd-bg-color-white">
+                        <div class="wd-flex wd-nav-only">
+                            <ul class="list-group wd-nav-only-list wd-no-borders">
+                                <li class="list-group-item"><a href="#"><i class="fa-solid fa-bullhorn"></i>Notifications</a></li>
+                                <li class="list-group-item"><a href="/Kanbas-old/Account/Profile/screen.html"><i class="fa-solid fa-house"></i>Profile</a></li>
+                                <li class="list-group-item"><a href="#"><i class="fa-regular fa-folder"></i>Files</a></li>
+                                <li class="list-group-item" ><a href="/Kanbas-old/Account/Profile/edit.html"><i class="fa-solid fa-gear"></i>Settings</a></li>
+                                <li class="list-group-item"><a href="#"><i class="fa-solid fa-book"></i>ePortfolios</a></li>
+                                <li class="list-group-item" ><a href="#"><i class="fa-solid fa-children"></i>Shared Content</a></li>
+                                <li class="list-group-item"><a href="#"><i class="fa-regular fa-comments"></i>The Hub</a></li>
+                                <li class="list-group-item"><a href="#"><i class="fa-solid fa-bullseye"></i>Qwickly Course Tools</a></li>
+                                <li class="list-group-item"><a href="#"><i class="fa-regular fa-comments"></i>Global Announcements</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+</div>
+
+
+
+
+<div class= "d-flex">
+    <div class="wd-bg-color-black">
+        <ul class="wd-kanbas-navigation d-none d-md-block">
+            <li><i class="fa-solid fa-n" ></i></li>
+            <li class="wd-active"><a href="/Kanbas-old/Account/Profile/screen.html">
+                <i class="fa-solid fa-circle-user" style="color: gray;"></i>
+                Account</a></li>
+            <li ><a href="/Kanbas-old/Dashboard/screen.html">
+                <i class="fa-solid fa-gauge-high"></i>
+                Dashboard</a></li>
+            <li><a href="/Kanbas-old/Courses/Home/screen.html">
+                <i class="fa-solid fa-book"></i>
+                Courses</a></li>
+            <li><a href="#">
+                <i class="fa-solid fa-calendar-days"></i>
+                Calendar</a></li>
+            <li><a href="#">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                Inbox</a></li>
+            <li><a href="#">
+                <i class="fa-regular fa-clock"></i>
+                History</a></li>
+            <li><a href="#">
+                <i class="fa-solid fa-network-wired"></i>
+                Studio</a></li>
+            <li><a href="#">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i><br />Commons</a></li>
+            <li><a href="#">
+                <i class="fa-regular fa-circle-question"></i><br/>
+                Help</a></li>
+        </ul></div>
+
+
+    <div class="wd-account-navigation d-none d-md-block">
+
+        <ul class="list-group wd-account-navigation d-none d-md-block">
+            <li><a href="#" class="list-group-item">Notifications</a></li>
+            <li class="wd-active"><a href="/Kanbas-old/Account/Profile/screen.html" class="list-group-item">Profile</a></li>
+            <li><a href="#" class="list-group-item">Files</a></li>
+            <li><a href="#" class="list-group-item">Settings</a></li>
+            <li><a href="#" class="list-group-item">ePortfolios</a></li>
+            <li><a href="#" class="list-group-item">Shared Content</a></li>
+            <li><a href="#" class="list-group-item">The Hub</a></li>
+            <li><a href="#" class="list-group-item">Qwickly Course Tools</a></li>
+            <li><a href="#" class="list-group-item">Global Announcements</a></li>
+        </ul>
+
+        <nav class="navbar fixed-top navbar-expand-lg d-none d-md-block">
+            <div>
+                <i class="fa-solid fa-bars"></i>
+                Rachel Schnakenberg's Profile
+            </div>
+            <hr />
+        </nav>
+    </div>
+    <div class="wd-account-profile flex-grow-1">
+        <div class="float-end">
+            <a class="btn btn-primary" href="/Kanbas-old/Account/Profile/screen.html" role="button"><i class="wd-profile-small-icon fa-solid fa-pencil"></i>Cancel Editing</a>
+        </div>
+        <i class="fa-solid fa-circle-user"></i>
+        <br/>
+
+        <div class="mb-3 row">
+            <div class="col-6"><div><label for="name1" class="col-sm-2 col-form-label">Name:*</label></div>
+                <input type="text" class="form-control"
+                       id="name1" value="Rachel Schnakenberg">
+            </div> </div>
+
+        <div><label for="pronoun1" class="col-1"> Pronouns: </label></div>
+        <select class="form-select" id="pronoun1">
+            <option selected value="1">she/her</option>
+            <option value="2">he/him</option>
+            <option value="3">they/them</option>
+            <option value="4">other</option>
+        </select>
+        <br/>
+
+        <div class="mb-3 row">
+            <div class="col-6"><div><label for="title1" class="col-sm-2 col-form-label">Title: </label></div>
+                <input type="text" class="form-control"
+                       id="title1">
+            </div> </div>
+
+        <h4>Contact</h4>
+        <p>No registered services, you can add some on the <a href="#">settings</a> page.</p>
+
+        <div class="mb-3 row"> <div><label for="bio1" class="col-sm-2 col-form-label wd-xl-label"> Biography</label></div>
+            <div class="col-6"> <textarea class="form-control" id="bio1" rows="3" >Faculty, Software Engineer, AI, Space, and renewables enthusiast.</textarea>
+            </div> </div>
+
+        <h4>Links</h4>
+
+
+        <div class="row">
+            <div class="col-2 d-flex justify-content-center">
+                <h4>Title</h4>
+            </div>
+                <div class="col-1"> </div>
+            <div class="col-2 d-flex justify-content-center">
+                <h4>URL</h4>
+            </div>
+            <div class="col"> </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                        <input type="text" class="form-control" id="title2" value="Youtube">
+            </div>
+                <div class="col-1 d-flex justify-content-center"><i class="fa-solid fa-arrow-right wd-profile-small-icon"></i></div>
+
+            <div class="col-2">
+                <input type="text" class="form-control" id="title3" value="https://www.youtube.com/@WebDevTV">
+
+            </div>
+                <div class="col"><a href="#"><i class="fa-solid fa-x wd-profile-small-icon-red"></i></a></div>
+            </div>
+
+        <a class="btn btn-primary" href="#" role="button">Add another link</a>
+        <br/>
+        <hr/>
+        <div class="row">
+            <div class="col-4"></div>
+        <div class="col-auto"> <a class="btn btn-primary wd-btn-left" href="/Kanbas-old/Account/Profile/screen.html" role="button">Cancel</a>
+        <a class="btn btn-secondary wd-btn-left" href="/Kanbas-old/Account/Profile/screen.html" role="button">Save Profile</a></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

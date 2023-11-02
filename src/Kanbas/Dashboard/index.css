@@ -1,0 +1,86 @@
+.wd-kanbas-dashboard {
+    background-color: white;
+    list-style: none;
+    padding:10px;
+    margin: 10px;
+    margin-left: 30px;
+}
+
+.wd-kanbas-dashboard-title {
+    color: gray;
+    font-size: 2em;
+}
+
+.wd-kanbas-dashboard nav {
+    color: grey;
+    background-color: white;
+    font-size: 2em;
+    margin-left: 80px;
+    margin-right: 280px;
+    padding-left: 20px;
+}
+
+.wd-kanbas-dashboard-sub-title {
+    color: gray;
+    font-size: 1.5em;
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+.wd-kanbas-dashboard .card {
+    overflow: hidden;
+    width: 250px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    flex-wrap: wrap;
+}
+
+.wd-kanbas-dashboard .col {
+    paddding: 0px;
+}
+
+.wd-kanbas-dashboard-grid .col {
+    margin-top: 30px;
+}
+
+
+.wd-kanbas-dashboard a {
+    text-decoration: none;
+    color: gray;
+}
+
+
+.wd-kanbas-dashboard .card-title {
+    color: cornflowerblue;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.95em;
+    margin-bottom: 3px;
+
+}
+
+.wd-kanbas-dashboard .card-text {
+    color: gray;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1px;
+    font-size: 1.15em;
+}
+
+.wd-kanbas-dashboard-card-subtext.card-text{
+    padding: 2px;
+    font-size: 0.85em;
+}
+
+.wd-carddeck-row {
+    min-width: 3000px;
+}
+
+.wd-dashboard-button {
+    margin: 10px;
+}
+
+
+
