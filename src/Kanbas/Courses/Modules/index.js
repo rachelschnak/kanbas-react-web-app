@@ -2,7 +2,17 @@ import ModuleList from "./ModuleList";
 import "./index.css"
 import {AiOutlineCheckCircle, AiOutlinePlus} from "react-icons/ai";
 import {BiDotsVerticalRounded} from "react-icons/bi";
+import {addModule, setModule, updateModule} from "./modulesReducer";
+import React from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {useParams} from "react-router-dom";
+
+
 function Modules() {
+    const { courseId } = useParams();
+    const modules = useSelector((state) => state.modulesReducer.modules);
+    const module = useSelector((state) => state.modulesReducer.module);
+    const dispatch = useDispatch();
     return (
         <div className="wd-module-content">
             <div className="container flex-grow">
@@ -22,7 +32,7 @@ function Modules() {
                             </li>
                         </ul>
                     </div>
-                    <a className="list-group-item wd-kanbas-home-button-main wd-published-button wd-red-button" role="button"><AiOutlinePlus />  Module</a>
+                    <a className="list-group-item wd-kanbas-home-button-main wd-published-button wd-red-button" role="button" data-bs-toggle="collapse" href="#updateModToggle" role="button" aria-expanded="false" aria-controls="updateModToggle"><AiOutlinePlus />  Module</a>
                     <a className="list-group-item wd-kanbas-home-button-main btn-light" role="button"> <BiDotsVerticalRounded /></a>
                 </ div>
             </div>
