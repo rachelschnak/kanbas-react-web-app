@@ -8,7 +8,7 @@ import {
     addModule,
     deleteModule,
     updateModule,
-    setModule,
+    setModule, resetModule,
 } from "./modulesReducer";
 
 function ModuleList() {
@@ -35,11 +35,11 @@ function ModuleList() {
                     </div>
                     <div className="d-inline-block col wd-dashboard-buttons">
                         <button className="btn btn-success wd-dashboard-button"
-                                onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+                                onClick={() => dispatch(addModule({ ...module, course: courseId }))} data-bs-toggle="collapse" href="#updateModToggle" role="button" aria-expanded="false" aria-controls="updateModToggle">
                             Add
                         </button>
                         <button className="btn btn-primary wd-dashboard-button"
-                                onClick={() => dispatch(updateModule(module))}>
+                                onClick={() => dispatch(updateModule(module))} data-bs-toggle="collapse" href="#updateModToggle" role="button" aria-expanded="false" aria-controls="updateModToggle">
                             Update
                         </button>
                     </div>

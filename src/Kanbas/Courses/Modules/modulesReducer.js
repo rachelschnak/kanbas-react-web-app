@@ -10,13 +10,19 @@ const modulesSlice = createSlice({
                                      reducers: {
                                          addModule: (state, action) => {
                                              state.modules = [
-                                                 { ...action.payload, _id: new Date().getTime().toString() },
-                                                 ...state.modules,
-                                             ]; },
+                                                 {
+                                                     ...action.payload,
+                                                     _id: new Date().getTime().toString()
+                                                 },
+                                                                ...state.modules,
+                                             ];
+                                             state.module = { name: "New Module 123", description: "New Description" }
+                                         },
                                          deleteModule: (state, action) => {
                                              state.modules = state.modules.filter(
                                                  (module) => module._id !== action.payload
                                              );
+
                                          },
                                          updateModule: (state, action) => {
                                              state.modules = state.modules.map((module) => {
@@ -25,11 +31,17 @@ const modulesSlice = createSlice({
                                                  } else {
                                                      return module;
                                                  }
-                                             }); },
+                                             });
+                                             state.module = { name: "New Module 123", description: "New Description" }
+                                             },
                                          setModule: (state, action) => {
                                              state.module = action.payload;
-                                         }, },
+                                         },
+                                         resetModule: (state, action) => {
+                                             state.module = { name: "New Module 123", description: "New Description" }
+                                         },
+                                        },
                                  });
 export const { addModule, deleteModule,
-    updateModule, setModule } = modulesSlice.actions;
+    updateModule, setModule, resetModule } = modulesSlice.actions;
 export default modulesSlice.reducer;
