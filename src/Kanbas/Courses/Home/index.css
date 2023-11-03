@@ -86,6 +86,8 @@ a.wd-red-button {
     display: inline-flex;
 }
 
+
+
 .wd-kanbas-home-main-list .list-group-item{
     color: #2b2f32;
     background-color: #f0eded;
@@ -109,4 +111,3 @@ li.list-group-item.wd-module-item {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-

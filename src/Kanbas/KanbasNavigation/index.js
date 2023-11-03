@@ -26,6 +26,7 @@ function KanbasNavigation() {
     const { pathname } = useLocation();
     return (
         <div className="list-group wd-kanbas-navigation d-none d-md-block wd-course-top-nav-bar-large wd-main-nav-bar">
+            <img src="https://content.academicpositions.com/eyJidWNrZXQiOiJhcC1wcm9kdWN0aW9uLW1lZGlhLWFyY2hpdmUiLCJrZXkiOiJ1cGxvYWRzXC9KcXN5Y0o3R0JEcGRrOUhkelkzaVFxWFJIRjQzTDZvQ1RQOWhoYVQ2LmpwZyIsImVkaXRzIjpbXX0=" />
             {links.map((link, index) => (
                 <Link
                     key={index}

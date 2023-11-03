@@ -32,7 +32,7 @@ function Modules() {
                             </li>
                         </ul>
                     </div>
-                    <a className="list-group-item wd-kanbas-home-button-main wd-published-button wd-red-button" onClick={() => dispatch(resetModule({}))} role="button" data-bs-toggle="collapse" href="#updateModToggle" role="button" aria-expanded="false" aria-controls="updateModToggle"><AiOutlinePlus />  Module</a>
+                    <a className=" wd-kanbas-home-button-main wd-published-button wd-red-button" onClick={() => dispatch(resetModule({}))} role="button" data-bs-toggle="collapse" href="#updateModToggle" role="button" aria-expanded="false" aria-controls="updateModToggle"><AiOutlinePlus />  Module</a>
                     <a className="list-group-item wd-kanbas-home-button-main btn-light" role="button"> <BiDotsVerticalRounded /></a>
                 </ div>
             </div>

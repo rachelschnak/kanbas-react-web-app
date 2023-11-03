@@ -12,7 +12,9 @@ const assignmentsSlice = createSlice({
                                              state.assignments = [
                                                  { ...action.payload, _id: new Date().getTime().toString() },
                                                  ...state.assignments,
-                                             ]; },
+                                             ];
+                                             state.assignment = { title: "New Assignment 123", description: "New Description", dueDate: "2023-12-15", availableFromDate: "2023-09-15"}
+                                             },
                                          deleteAssignment: (state, action) => {
                                              state.assignments = state.assignments.filter(
                                                  (assignment) => assignment._id !== action.payload
@@ -25,7 +27,9 @@ const assignmentsSlice = createSlice({
                                                  } else {
                                                      return assignment;
                                                  }
-                                             }); },
+                                             },
+                                             state.assignment = { title: "New Assignment 123", description: "New Description", dueDate: "2023-12-15", availableFromDate: "2023-09-15"}
+                                             ); },
                                          selectAssignment: (state, action) => {
                                              state.assignment = action.payload;
                                          },
@@ -33,5 +37,5 @@ const assignmentsSlice = createSlice({
                                         }
                                  });
 export const { addAssignment, deleteAssignment,
-    updateAssignment, selectAssignment, resetAssignment } = assignmentsSlice.actions;
+    updateAssignment, selectAssignment } = assignmentsSlice.actions;
 export default assignmentsSlice.reducer;

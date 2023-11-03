@@ -23,13 +23,18 @@ function Kanbas() {
                                 return course;
                             } else {
                                 return c;
-                            }}))};
+                            }}))
+    };
     const addNewCourse = () => {
         setCourses([...courses, {...course, _id: new Date().getTime().toString() }]);
     };
     const deleteCourse = (courseId) => {
         setCourses(courses.filter((course) => course._id !== courseId));
     };
+    const resetCourse = () => setCourse({
+                                            name: "New Course", number: "New Number",
+                                            startDate: "2023-09-10", endDate: "2023-12-15",
+                                        });
 
     return (
         <Provider store={store}>
@@ -46,7 +51,8 @@ function Kanbas() {
                         setCourse={setCourse}
                         addNewCourse={addNewCourse}
                         deleteCourse={deleteCourse}
-                        updateCourse={updateCourse}/>
+                        updateCourse={updateCourse}
+                        resetCourse={resetCourse}/>
                     } />
                     <Route path="Courses/:courseId/*" element={<Courses courses={courses} />} />
                     <Route path="Calendar" element={<Calendar />} />

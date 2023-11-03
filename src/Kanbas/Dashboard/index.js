@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import db from "../Database";
 import "./index.css";
 function Dashboard({courses, course, setCourse, addNewCourse,
-                        deleteCourse, updateCourse }) {
+                        deleteCourse, updateCourse, resetCourse }) {
 
     return (
         <div className="wd-kanbas-dashboard">
@@ -14,6 +14,7 @@ function Dashboard({courses, course, setCourse, addNewCourse,
             <h5>Course</h5>
             <div className="wd-module-list">
                 <div className="wd-edit-modules row">
+
             <input value={course.name} className="form-control"
                    onChange={(e) => setCourse({ ...course, name: e.target.value }) } />
             <input value={course.number} className="form-control"
@@ -24,12 +25,12 @@ function Dashboard({courses, course, setCourse, addNewCourse,
                    onChange={(e) => setCourse({ ...course, endDate: e.target.value }) } />
 
             <div className="wd-module-edit-buttons">
-                <button className="btn btn-primary float-end" onClick={updateCourse} >
+                <button className="btn btn-primary float-end" onClick={() => {updateCourse(); resetCourse()}} >
                     Update
                 </button>
-                        <button className="btn btn-success float-end" onClick={addNewCourse} >Add</button>
+                        <button className="btn btn-success float-end" onClick={() => {addNewCourse(); resetCourse()}} >Add</button>
             </div>
-                </div>
+                    </div>
             <div className="card-deck wd-kanbas-dashboard-grid">
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4" >
                     {courses.map((course) => (
