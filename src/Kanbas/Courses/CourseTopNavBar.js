@@ -1,13 +1,26 @@
 import {Link, useLocation, useParams} from "react-router-dom";
-import db from "../Database";
+//import db from "../Database";
 import {FaBars} from "react-icons/fa";
 import {LuGlasses} from "react-icons/lu";
 import "./index.css"
-import courses from "./index";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
-function CourseTopNavBar({ courses }){
+function CourseTopNavBar(){
+    const API_BASE = process.env.REACT_APP_API_BASE;
+    const URL = `${API_BASE}/courses`;
     const { courseId } = useParams();
-    const course = courses.find((course) => course._id === courseId);
+    const [course, setCourse] = useState({});
+    const findCourseById = async (courseId) => {
+        const response = await axios.get(
+            `${URL}/${courseId}`
+        );
+        setCourse(response.data);
+    };
+    useEffect(() => {
+        findCourseById(courseId);
+    }, [courseId]);
+    //const course = courses.find((course) => course._id === courseId);
     const pathname = useLocation();
     const pageName = pathname.pathname.split('/').pop();
     return(

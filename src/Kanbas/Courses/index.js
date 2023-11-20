@@ -26,11 +26,15 @@ function Courses() {
     useEffect(() => {
         findCourseById(courseId);
         }, [courseId]);
-
+    const [courses, setCourses] = useState([]);
+    const findAllCourses = async () => {
+        const response = await axios.get(URL);
+        setCourses(response.data);
+    };
 
     return (
         <div className={"wd-course-nav-bar"}>
-            {/*<CourseTopNavBar courses={courses} />*/}
+            <CourseTopNavBar courses={courses} course ={course} />
             <CourseNavigation />
             <div>
                 <div className="overflow-y-scroll position-fixed bottom-0 end-0" style={{  left: "320px", top: "50px"}} >

@@ -31,7 +31,7 @@ function CourseStatus() {
 
                     <Link key={assignment.title} to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`} className="list-group-item wd-kanbas-home-todo-list-item">
                         Grade {assignment._id} {assignment.title} <br/>
-                        <div className="wd-todo-sub"><h8>100 points - Oct 31 at 11:59pm </h8></div>
+                        <div className="wd-todo-sub">100 points - Oct 31 at 11:59pm </div>
                     </Link>
 
                     ))
