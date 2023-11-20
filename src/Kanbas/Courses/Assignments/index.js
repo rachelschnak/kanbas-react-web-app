@@ -1,6 +1,5 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link, useParams } from "react-router-dom";
-import db from "../../Database";
 import "./index.css"
 import {AiOutlineCheckCircle, AiOutlinePlus} from "react-icons/ai";
 import {BiDotsVerticalRounded} from "react-icons/bi";
@@ -8,22 +7,36 @@ import {useDispatch} from "react-redux";
 import { useSelector } from "react-redux";
 import {
     selectAssignment,
-    deleteAssignment
+    deleteAssignment, setAssignments
 } from "./assignmentsReducer";
 
+import {findAssignmentsForCourse} from "./service";
+import * as service from "./service";
 
 
 function Assignments() {
     const { courseId } = useParams();
-    ///const assignments = db.assignments;
-    const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+
+    useEffect(() => {
+        findAssignmentsForCourse(courseId)
+            .then((assignments) =>
+                      dispatch(setAssignments(assignments))
+            );
+    }, [courseId]);
+
+    const handleDeleteAssignment = (assignmentId) => {
+        service.deleteAssignment(assignmentId).then((status) => {
+            dispatch(deleteAssignment(assignmentId));
+        });
+    };
+
     const assignment = useSelector((state) => state.assignmentsReducer.assignment);
     const courseAssignments = useSelector((state) => state.assignmentsReducer.assignments.filter((assignment) => assignment.course === courseId));
     const dispatch = useDispatch();
 
     function confirmDelete(assignment) {
         if (window.confirm('Confirm deletion of assignment')) {
-            return dispatch(deleteAssignment(assignment._id));
+            return handleDeleteAssignment(assignment._id)//dispatch(deleteAssignment(assignment._id));
         }
     }
 

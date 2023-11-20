@@ -1,6 +1,5 @@
-import React, { useState} from "react";
+import React, { useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-import db from "../../Database";
 import {BiSolidCheckCircle} from "react-icons/bi";
 import {PiDotsSixVerticalBold} from "react-icons/pi";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,15 +7,43 @@ import {
     addModule,
     deleteModule,
     updateModule,
-    setModule, resetModule,
+    setModule, resetModule, setModules,
 } from "./modulesReducer";
+
+import {createModule, findModulesForCourse} from "./client";
+import * as client from "./client";
+import axios from "axios";
+import modules from "./index";
 
 function ModuleList() {
     const { courseId } = useParams();
+    useEffect(() => {
+        findModulesForCourse(courseId)
+            .then((modules) =>
+                      dispatch(setModules(modules))
+            );
+    }, [courseId]);
+
+    const handleAddModule = () => {
+        createModule(courseId, module).then((module) => {
+            dispatch(addModule(module));
+        });
+    };
+
+    const handleDeleteModule = (moduleId) => {
+        client.deleteModule(moduleId).then((status) => {
+            dispatch(deleteModule(moduleId));
+        });
+    };
+
+    const handleUpdateModule = async (module) => {
+        const status = await client.updateModule(module);
+        dispatch(updateModule(module));
+    };
+
     const modules = useSelector((state) => state.modulesReducer.modules);
     const module = useSelector((state) => state.modulesReducer.module);
     const dispatch = useDispatch();
-
 
     return (
         <ul className="list-group wd-mod-list">
@@ -35,11 +62,11 @@ function ModuleList() {
                     </div>
                     <div className="d-inline-block col wd-dashboard-buttons">
                         <button className="btn btn-success wd-dashboard-button"
-                                onClick={() => dispatch(addModule({ ...module, course: courseId }))} data-bs-toggle="collapse" href="#updateModToggle" role="button" aria-expanded="false" aria-controls="updateModToggle">
-                            Add
+                                onClick={handleAddModule}>
+                                Add
                         </button>
                         <button className="btn btn-primary wd-dashboard-button"
-                                onClick={() => dispatch(updateModule(module))} data-bs-toggle="collapse" href="#updateModToggle" role="button" aria-expanded="false" aria-controls="updateModToggle">
+                                onClick={() => handleUpdateModule(module)} data-bs-toggle="collapse" href="#updateModToggle" role="button" aria-expanded="false" aria-controls="updateModToggle">
                             Update
                         </button>
                     </div>
@@ -60,7 +87,7 @@ function ModuleList() {
 
                                     <span className="wd-green-icon wd-dashboard-button"><BiSolidCheckCircle /></span>
                                     <button className="btn btn-success wd-dashboard-button float-end" onClick={() => dispatch(setModule(module))} data-bs-toggle="collapse" href="#updateModToggle" role="button" aria-expanded="false" aria-controls="updateModToggle">Edit</button>
-                                    <button className="btn btn-danger wd-dashboard-button float-end" onClick={() => dispatch(deleteModule(module._id))}>Delete</button>
+                                    <button className="btn btn-danger wd-dashboard-button float-end" onClick={() => handleDeleteModule(module._id)}>Delete</button>
 
 
                             </div>

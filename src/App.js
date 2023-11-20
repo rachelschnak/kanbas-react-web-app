@@ -7,6 +7,7 @@ import {HashRouter} from "react-router-dom";
 import {Routes, Route, Navigate} from "react-router";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 function App() { return (
     <HashRouter>
         <div>

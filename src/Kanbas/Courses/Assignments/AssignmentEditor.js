@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import db from "../../Database";
 import {BiDotsVerticalRounded, BiSolidCheckCircle} from "react-icons/bi";
@@ -6,26 +6,45 @@ import { useSelector, useDispatch } from "react-redux";
 import {
     addAssignment,
     deleteAssignment,
-    updateAssignment,
+    editAssignment,
     selectAssignment,
+    setAssignments,
 } from "./assignmentsReducer";
+import * as service from "./service";
 
-import {setModule} from "../Modules/modulesReducer";
-
+import {findAssignmentsForCourse, createAssignment, updateAssignment} from "./service";
 
 
 function AssignmentEditor() {
     const { assignmentId } = useParams();
-    const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+
+    useEffect(() => {
+        findAssignmentsForCourse(courseId)
+            .then((assignments) =>
+                      dispatch(setAssignments(assignments))
+            );
+    }, [assignmentId]);
+
     const assignment = useSelector((state) => state.assignmentsReducer.assignment);
     const { courseId } = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const handleAddAssignment = () => {
+        createAssignment(courseId, assignment).then((assignment) => {
+            dispatch(addAssignment(assignment));
+        });
+    };
+
+    const handleUpdateAssignment = async () => {
+        const status = await service.updateAssignment(assignment);
+        dispatch(editAssignment(assignment));
+    };
+
 
     function checkNew() {
         if (assignmentId === "NewAssignment")
-            return dispatch(addAssignment({...assignment, course: courseId}));
-        else return dispatch(updateAssignment(assignment));
+            return handleAddAssignment(); //dispatch(addAssignment({...assignment, course: courseId}));
+        else return handleUpdateAssignment(); //dispatch(updateAssignment(assignment));
     }
 
     return (
