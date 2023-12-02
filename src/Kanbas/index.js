@@ -1,20 +1,24 @@
 import KanbasNavigation from "./KanbasNavigation";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
-import Account from "./Account";
 import Courses from "./Courses";
 import Calendar from "./Calendar";
-//import db from "./Database";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import store from "./store";
 import { Provider } from "react-redux";
+import Signin from "./users/signin";
+import UserTable from "./users/table";
+import Account from "./users/account.js"
+import UserList from "./users/list";
+import UserDetails from "./users/details";
 
 function Kanbas() {
     const [courses, setCourses] = useState([]);
     //const URL = "http://localhost:4000/api/courses";
     const API_BASE = process.env.REACT_APP_API_BASE;
     const URL = `${API_BASE}/courses`;
+
     const findAllCourses = async () => {
         const response = await axios.get(URL);
         setCourses(response.data);
@@ -67,7 +71,6 @@ function Kanbas() {
             <div className="container-fluid">
                 <Routes>
                     <Route path="/" element={<Navigate to="Dashboard" />} />
-                    <Route path="Account/*" element={<Account />} />
                     <Route path="Dashboard" element={
                         <Dashboard
                         courses={courses}
@@ -85,6 +88,11 @@ function Kanbas() {
                     <Route path="Studio" element={<h1>Studio</h1>} />
                     <Route path="Commons" element={<h1>Commons</h1>} />
                     <Route path="Help" element={<h1>Help</h1>} />
+                    <Route path="/signin" element={<Signin />} />
+                    <Route path="/account" element={<Account />} />
+                    <Route path="/admin/users" element={<UserTable />} />
+                    <Route path="/users" element={<UserList />} />
+                    <Route path="/users/:id" element={<UserDetails />} />
                 </Routes>
             </div>
         </div>
