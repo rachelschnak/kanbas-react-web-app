@@ -19,6 +19,7 @@ function SignIn() {
     const links = ["Account", "Signin", "Signup", "Search"];
     const { pathname } = useLocation();
 
+
     return (
         <div className={"row"}>
             <div className="list-group wd-kanbas-user-navigation col-auto d-none d-lg-block">
