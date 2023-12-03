@@ -14,6 +14,7 @@ import UserList from "./users/list";
 import UserDetails from "./users/details";
 import Signup from "./users/signup";
 import Search from "./users/search";
+import "dotenv/config";
 
 function Kanbas() {
     const [courses, setCourses] = useState([]);
