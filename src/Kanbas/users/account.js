@@ -1,17 +1,23 @@
 import * as client from "./client";
 import { useState, useEffect } from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useLocation, useNavigate, useParams} from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import {BiSolidUserCircle} from "react-icons/bi";
+import {FaArrowRight} from "react-icons/fa";
+import {IoMdCreate, IoMdSearch} from "react-icons/io";
+import "./index.css"
+
 function Account() {
     const [account, setAccount] = useState(null);
     const navigate = useNavigate();
+    const { id } = useParams();
     const fetchAccount = async () => {
         //try {
             const account = await client.account();
             setAccount(account);
-        //} //catch () {
-            //navigate("/kanbas/signin")
+        //} catch (error) {
+        //    navigate("/kanbas/signin")
         //}
         if (account == null) {
            navigate("/kanbas/signin")
@@ -26,28 +32,52 @@ function Account() {
         navigate("/kanbas/signin");
     };
 
+    const findUserById = async (id) => {
+        const user = await client.findUserById(id);
+        setAccount(user);
+    };
+
     useEffect(() => {
-        fetchAccount();
+        if (id) {
+            findUserById(id);
+        } else {
+            fetchAccount();
+    }
     }, []);
 
+    const links = ["Account", "Signin", "Signup", "Search"];
+    const { pathname } = useLocation();
+
     return (
-        <div className="w-50">
+        <div className={"row"}>
+            <div className="list-group wd-kanbas-user-navigation col-auto d-none d-lg-block">
+                {links.map((link, index) => (
+                    <Link
+                        key={index}
+                        to={`/Kanbas/${link}`}
+                        className={`list-group-item ${pathname.includes(link) && "active"}`}>
+                        {link}
+                    </Link>
+                ))}
+            </div>
+
+        <div className=" col-3 w-50 wd-kanbas-user-content d-block">
             <h1>Account</h1>
             {account && (
                 <div>
-                    <input value={account.password}
+                    <input value={account.password} placeholder="password"
                            onChange={(e) => setAccount({ ...account,
                                                            password: e.target.value })}/>
-                    <input value={account.firstName}
+                    <input value={account.firstName} placeholder={"first name"}
                            onChange={(e) => setAccount({ ...account,
                                                            firstName: e.target.value })}/>
-                    <input value={account.lastName}
+                    <input value={account.lastName} placeholder={"last name"}
                            onChange={(e) => setAccount({ ...account,
                                                            lastName: e.target.value })}/>
-                    <input value={account.dob}
+                    <input value={account.dob} placeholder={"Date of Birth"}
                            onChange={(e) => setAccount({ ...account,
                                                            dob: e.target.value })}/>
-                    <input value={account.email}
+                    <input value={account.email} placeholder={"email"}
                            onChange={(e) => setAccount({ ...account,
                                                            email: e.target.value })}/>
                     <select value={account.role} onChange={(e) => setAccount({ ...account,
@@ -70,6 +100,6 @@ function Account() {
                     </Link>
                                )}
                 </div>
-            )} </div>
+            )} </div></div>
     ); }
 export default Account;

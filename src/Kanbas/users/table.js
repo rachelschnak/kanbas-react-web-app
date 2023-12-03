@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as client from "./client";
 import { BsFillCheckCircleFill, BsPencil, BsTrash3Fill, BsPlusCircleFill } from "react-icons/bs";
+import {Link, useLocation} from "react-router-dom";
 function UserTable() {
     const [users, setUsers] = useState([]);
     const [user, setUser] = useState({ username: "", password: "", role: "USER" });
@@ -46,8 +47,22 @@ function UserTable() {
         }
     };
 
+    const links = ["Account", "Signin", "Signup", "Search"];
+    const { pathname } = useLocation();
+
     return (
-        <div>
+<div className={"row"}>
+    <div className="list-group wd-kanbas-user-navigation col-auto d-none d-lg-block">
+        {links.map((link, index) => (
+            <Link
+                key={index}
+                to={`/Kanbas/${link}`}
+                className={`list-group-item ${pathname.includes(link) && "active"}`}>
+                {link}
+            </Link>
+        ))}
+    </div>
+        <div className={"col wd-kanbas-user-content d-block"}>
             <h1>User List</h1>
             <table className="table">
                 <thead> <tr>
@@ -57,14 +72,14 @@ function UserTable() {
                 </tr>
                 <tr>
                     <td>
-                        <input value={user.username} onChange={(e) => setUser({ ...user, username: e.target.value })}/>
-                        <input value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })}/>
+                        <input value={user.username} placeholder="username" onChange={(e) => setUser({ ...user, username: e.target.value })}/>
+                        <input value={user.password} placeholder="password" onChange={(e) => setUser({ ...user, password: e.target.value })}/>
                     </td>
                     <td>
-                        <input value={user.firstName} onChange={(e) => setUser({ ...user, firstName: e.target.value })}/>
+                        <input value={user.firstName} placeholder="first name" onChange={(e) => setUser({ ...user, firstName: e.target.value })}/>
                     </td>
                     <td>
-                        <input value={user.lastName} onChange={(e) => setUser({ ...user, lastName: e.target.value })}/>
+                        <input value={user.lastName} placeholder="last name" onChange={(e) => setUser({ ...user, lastName: e.target.value })}/>
                     </td>
                     <td>
                         <select value={user.role} onChange={(e) => setUser({ ...user, role: e.target.value })}>
@@ -85,7 +100,9 @@ function UserTable() {
                 <tbody>
                 {users.map((user) => (
                     <tr key={user._id}>
+                        <Link to={`/kanbas/account/${user._id}`}>
                         <td>{user.username}</td>
+                        </Link>
                         <td>{user.firstName}</td>
                         <td>{user.lastName}</td>
                         <td className="text-nowrap">
@@ -100,5 +117,6 @@ function UserTable() {
                 </tbody>
             </table>
         </div>
+</div>
     ); }
 export default UserTable;

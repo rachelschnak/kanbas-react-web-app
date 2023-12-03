@@ -1,6 +1,6 @@
 import * as client from "./client";
 import { useEffect, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import {Link, Navigate, useLocation} from "react-router-dom";
 function UserList() {
     const [users, setUsers] = useState([]);
     const [currentUser, setCurrentUser] = useState(null); // [1
@@ -17,8 +17,23 @@ function UserList() {
         fetchUser();
     }, []);
 
+    const links = ["Account", "Signin", "Signup", "Search"];
+    const { pathname } = useLocation();
+
     return (
-        <div>
+<div className={"row"}>
+        <div className="list-group wd-kanbas-user-navigation col-auto d-none d-lg-block">
+            {links.map((link, index) => (
+                <Link
+                    key={index}
+                    to={`/Kanbas/${link}`}
+                    className={`list-group-item ${pathname.includes(link) && "active"}`}>
+                    {link}
+                </Link>
+            ))}
+        </div>
+
+        <div className={"col wd-kanbas-user-content d-block"}>
             {currentUser && currentUser.role === "ADMIN" && (
                 <>
                     <h2>Users</h2>
@@ -39,6 +54,7 @@ function UserList() {
                 <Navigate to="/kanbas/signin" />
             )}
         </div>
+</div>
     );
 }
 

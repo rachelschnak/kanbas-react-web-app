@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import {useParams, useNavigate, Link, useLocation} from "react-router-dom";
 import * as client from "./client";
 import { useEffect, useState } from "react";
 function UserDetails() {
@@ -21,8 +21,23 @@ function UserDetails() {
         fetchUser();
     }, []);
 
+    const links = ["Account", "Signin", "Signup", "Search"];
+    const { pathname } = useLocation();
+
     return (
-        <div>
+        <div className={"row"}>
+            <div className="list-group wd-kanbas-user-navigation col-auto d-none d-lg-block">
+                {links.map((link, index) => (
+                    <Link
+                        key={index}
+                        to={`/Kanbas/${link}`}
+                        className={`list-group-item ${pathname.includes(link) && "active"}`}>
+                        {link}
+                    </Link>
+                ))}
+            </div>
+        <div className={"col wd-kanbas-user-content d-block"}>
+
             <h2>User Details</h2>
 
             {user && (
@@ -50,6 +65,7 @@ function UserDetails() {
                     </button>
                 </div>
             )}
+        </div>
         </div>
     );
 }

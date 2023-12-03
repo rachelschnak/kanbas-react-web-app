@@ -1,6 +1,6 @@
 import * as client from "./client";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 function SignIn() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -15,8 +15,23 @@ function SignIn() {
             setError(error);
         }
     };
+
+    const links = ["Account", "Signin", "Signup", "Search"];
+    const { pathname } = useLocation();
+
     return (
-        <div>
+        <div className={"row"}>
+            <div className="list-group wd-kanbas-user-navigation col-auto d-none d-lg-block">
+                {links.map((link, index) => (
+                    <Link
+                        key={index}
+                        to={`/Kanbas/${link}`}
+                        className={`list-group-item ${pathname.includes(link) && "active"}`}>
+                        {link}
+                    </Link>
+                ))}
+            </div>
+        <div className={"col-3 wd-kanbas-user-content d-block"}>
             <h2>Sign In</h2>
             {error && <div className="alert alert-danger">{error.message}</div>}
             <input
@@ -36,6 +51,7 @@ function SignIn() {
             <button onClick={signIn} className="btn btn-primary">
                 Sign In
             </button>
+        </div>
         </div>
     );
 }

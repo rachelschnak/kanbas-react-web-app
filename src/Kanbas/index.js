@@ -12,6 +12,8 @@ import UserTable from "./users/table";
 import Account from "./users/account.js"
 import UserList from "./users/list";
 import UserDetails from "./users/details";
+import Signup from "./users/signup";
+import Search from "./users/search";
 
 function Kanbas() {
     const [courses, setCourses] = useState([]);
@@ -68,7 +70,7 @@ function Kanbas() {
         <Provider store={store}>
         <div className="d-flex">
             <KanbasNavigation />
-            <div className="container-fluid">
+            <div className="container-fluid wd-kanbas-main">
                 <Routes>
                     <Route path="/" element={<Navigate to="Dashboard" />} />
                     <Route path="Dashboard" element={
@@ -93,6 +95,9 @@ function Kanbas() {
                     <Route path="/admin/users" element={<UserTable />} />
                     <Route path="/users" element={<UserList />} />
                     <Route path="/users/:id" element={<UserDetails />} />
+                    <Route path="/account/:id" element={<Account />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/search" element={<Search />} />
                 </Routes>
             </div>
         </div>
