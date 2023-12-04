@@ -2,7 +2,7 @@ import React, {useEffect,  useState } from "react";
 import axios from "axios";
 function EncodingParametersInURLs() {
     const API_BASE = process.env.REACT_APP_API_BASE;
-    const URL = `${API_BASE}/a5`
+    const URL = `${API_BASE}/labs/a5`
 
 
     const [a, setA] = useState(34);
