@@ -7,6 +7,8 @@ import { Provider } from "react-redux";
 import Assignment5 from "./a5";
 
 
+const API_BASE = process.env.REACT_APP_API_BASE;
+
 function Labs() { return (
     <Provider store={store}>
     <div>
